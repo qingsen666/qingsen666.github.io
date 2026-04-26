@@ -1,0 +1,59 @@
+/* ========== 卡片半透明毛玻璃效果 ========== */
+
+/* 白天模式（浅色）下的卡片 */
+:root {
+  /* 这里的 0.85 是透明度，0.1最透，1是不透。建议 0.75 - 0.9 之间 */
+  --card-bg: rgba(255, 255, 255, 0.85); 
+  --card-border: rgba(255, 255, 255, 0.6);
+  --blur-radius: 10px; /* 模糊程度，数字越大越糊 */
+}
+
+/* 夜间模式（深色）下的卡片 */
+[data-theme="dark"] {
+  --card-bg: rgba(30, 30, 46, 0.85);
+  --card-border: rgba(50, 50, 70, 0.6);
+  --blur-radius: 10px;
+}
+
+/* 首页文章卡片 */
+#recent-posts > .recent-post-item {
+  background: var(--card-bg) !important;
+  border: 1px solid var(--card-border) !important;
+  backdrop-filter: blur(var(--blur-radius)) !important;
+  -webkit-backdrop-filter: blur(var(--blur-radius)) !important;
+  border-radius: 15px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 侧边栏卡片（最新文章、分类等） */
+#aside-content .card-widget {
+  background: var(--card-bg) !important;
+  border: 1px solid var(--card-border) !important;
+  backdrop-filter: blur(var(--blur-radius)) !important;
+  -webkit-backdrop-filter: blur(var(--blur-radius)) !important;
+  border-radius: 15px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 归档页、分类页、标签页的列表卡片 */
+.layout > div:not(.recent-posts) .card-widget,
+.layout #archive,
+.layout .category-lists,
+.layout .tag-cloud {
+  background: var(--card-bg) !important;
+  border: 1px solid var(--card-border) !important;
+  backdrop-filter: blur(var(--blur-radius)) !important;
+  -webkit-backdrop-filter: blur(var(--blur-radius)) !important;
+  border-radius: 15px !important;
+}
+
+/* 文章页的主体内容区域（可选，如果你觉得文章正文也要透明就解开注释）*/
+/*
+#post {
+  background: var(--card-bg) !important;
+  border: 1px solid var(--card-border) !important;
+  backdrop-filter: blur(var(--blur-radius)) !important;
+  -webkit-backdrop-filter: blur(var(--blur-radius)) !important;
+  border-radius: 15px !important;
+}
+*/
